@@ -21,7 +21,7 @@ if __name__ == "__main__":
             print(f"Employee with ID {employee_id} not found")
             exit()
         user_data = response.json()
-        employee_name = user_data.get("name")
+        employee_name = user_data.get("username")
 
         # Fetch todo list for the employee
         todos_url = ("https://jsonplaceholder.typicode.com/todos?userId={e_id}"
