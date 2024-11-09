@@ -41,4 +41,4 @@ if __name__ == "__main__":
                     task["title"]
                 ])
 
-        print(f"Data exported to {csv_filename}")
+        print(f"Data exported to {csv_filename}.")
