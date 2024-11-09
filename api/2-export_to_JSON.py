@@ -29,15 +29,17 @@ if __name__ == "__main__":
         response = requests.get(todos_url)
         todos = response.json()
 
-        # Write JSON data to file
+        # Process and structure the user's tasks
         tasks = [{
             "task": task["title"],
             "completed": task["completed"],
             "username": employee_name
         } for task in todos]
 
+        # Structure the json data
         data = {str(employee_id): tasks}
 
+        # Write JSON data to file
         json_filename = f"{employee_id}.json"
         with open(json_filename, "w") as json_file:
             json.dump(data, json_file)
