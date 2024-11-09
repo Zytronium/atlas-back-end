@@ -23,7 +23,8 @@ if __name__ == "__main__":
         employee_name = user_data.get("name")
 
         # Fetch todo list for the employee
-        todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+        todos_url = ("https://jsonplaceholder.typicode.com/todos?userId={e_id}"
+                     .format(e_id=employee_id))
         response = requests.get(todos_url)
         todos = response.json()
 
