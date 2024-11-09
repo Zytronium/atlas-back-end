@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for gathering data from an API and exporting to CSV."""
+"""Module for gathering data from an API and exporting to JSON."""
 import json
 import requests
 from sys import argv

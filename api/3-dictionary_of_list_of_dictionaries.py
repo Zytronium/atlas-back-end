@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for gathering data from an API and exporting to CSV."""
+"""Module for gathering data from an API and exporting to JSON."""
 import json
 import requests
 
@@ -33,9 +33,9 @@ if __name__ == "__main__":
 
         # Process and structure each user's tasks
         tasks = [{
+            "username": username,
             "task": task["title"],
-            "completed": task["completed"],
-            "username": username
+            "completed": task["completed"]
         } for task in todos]
 
         # Store the user's tasks under their user ID
