@@ -21,7 +21,7 @@ if __name__ == "__main__":
             print(f"Employee with ID {employee_id} not found")
             exit()
         user_data = response.json()
-        employee_name = user_data.get("username")
+        username = user_data.get("username")
 
         # Fetch todo list for the employee
         todos_url = ("https://jsonplaceholder.typicode.com/todos?userId={e_id}"
@@ -31,9 +31,9 @@ if __name__ == "__main__":
 
         # Process and structure the user's tasks
         tasks = [{
+            "username": username,
             "task": task["title"],
-            "completed": task["completed"],
-            "username": employee_name
+            "completed": task["completed"]
         } for task in todos]
 
         # Structure the json data
